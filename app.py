@@ -254,10 +254,10 @@ def sell():
         user_cash_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = user_cash_db[0]["cash"]
     
-        user_shares = db.execute("SELECT shares FROM transactions WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", id=user_id, symbol=symbol)
-        user_shares_real = user_shares[0]["shares"]
+        user_shares = db.execute("SELECT SUM(shares) AS total_shares FROM transactions WHERE user_id=:id AND symbol = :symbol", id=user_id, symbol=symbol)
+        user_shares_real = user_shares[0]["total_shares"]
         
-        if shares > user_shares_real:
+        if user_shares_real is None or shares > user_shares_real:
             return apology("You don't have this amount of shares!")
         
         uptd_cash = user_cash + transaction_value
