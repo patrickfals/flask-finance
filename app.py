@@ -61,7 +61,11 @@ def buy():
     
     else:
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        
+        try:
+            shares = int(request.form.get("shares"))
+        except (ValueError, TypeError):
+            return apology("Shares must be a positive integer")
         
         if not symbol:
             return apology("Must give symbol")
@@ -71,7 +75,7 @@ def buy():
         if stock == None:
             return apology("Symbol doesnt exist")
         
-        if shares < 0:
+        if shares <= 0:
             return apology("Shares not allowed")
     
         transaction_value = shares * stock["price"]
@@ -226,7 +230,11 @@ def sell():
         
     else:
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        
+        try:
+            shares = int(request.form.get("shares"))
+        except (ValueError, TypeError):
+            return apology("Shares must be a positive integer")
         
         if not symbol:
             return apology("Must give symbol")
@@ -236,7 +244,7 @@ def sell():
         if stock == None:
             return apology("Symbol doesnt exist")
         
-        if shares < 0:
+        if shares < 1:
             return apology("Shares not allowed")
             
     
