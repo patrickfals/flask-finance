@@ -7,15 +7,16 @@
 {% block main %}
     <h1>Sell</h1>
     <main class="container py-5 text-center">
-        <form action="/sell" method="post">
+        <form action="/sell" method="post" style="max-width: 300px; margin: 0 auto;">
             <div class="mb-3">
-                <select class="form-select mx-auto" name="symbol">
+                <select class="form-select" name="symbol">
                     {% for symbol in symbols %}
-                      <option value="{{ symbol }}">{{ symbol }}</option>
+                        <option value="{{ symbol }}">{{ symbol }}</option>
                     {% endfor %}
                 </select>
+            </div>
             <div class="mb-3">
-                <input class="form-control mx-auto w-auto" autocomplete="off" name="shares" placeholder="Shares" min="1" " type="number">
+                <input class="form-control" autocomplete="off" name="shares" placeholder="Shares" min="1" type="number">
             </div>
             <button class="btn btn-primary" type="submit">Sell</button>
         </form>
