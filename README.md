@@ -13,6 +13,17 @@ Originally I built this project as part of Harvard’s CS50 course and later cam
 - Transaction history
 - SQLite database
 
+## Screenshots
+
+### Portfolio
+![Portfolio](assets/portfolio.png)
+
+### Sell Stock
+![Sell](assets/sell.png)
+
+### Transaction History
+![History](assets/history.png)
+
 ## What I Learned
 
 - Understand how Flask handles routing and templates  
