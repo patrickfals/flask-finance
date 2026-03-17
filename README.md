@@ -1,17 +1,21 @@
 # Flask Finance Web App
 
-This is a stock portfolio simulation web app built with Flask. Users can create an account, log in, look up stock prices, buy and sell shares, and view their transaction history.
+A full-stack stock portfolio simulation web app built with Flask. Users can register, log in, look up real-time stock prices, buy and sell shares, and track their portfolio and transaction history.
 
-Originally I built this project as part of Harvard’s CS50 course and later came back to it to fix stock quote integration and clean up parts of the code. It's helped me understand how a full web app fits together with authentication, database management, and API usage.
+Originally developed as part of Harvard’s CS50 course, this project was later revisited to improve API integration, refine data handling, and clean up application structure.
+
+---
 
 ## Features
 
-- User registration and login
-- Stock quote lookup
-- Buy and sell functionality
-- Portfolio overview
-- Transaction history
-- SQLite database
+- User authentication (register, login, logout)
+- Real-time stock quote lookup via external API
+- Buy and sell shares with validation
+- Portfolio dashboard with total value tracking
+- Transaction history with timestamps
+- SQLite database for persistent storage
+
+---
 
 ## Screenshots
 
@@ -24,13 +28,18 @@ Originally I built this project as part of Harvard’s CS50 course and later cam
 ### Transaction History
 ![History](assets/history.png)
 
+---
+
 ## What I Learned
 
-- Understand how Flask handles routing and templates  
-- Implement user authentication and manage sessions  
-- Work with a relational database (SQLite)  
-- Integrate an external API for real-time data  
-- Debug and improve existing code  
+- How to structure a full-stack Flask application
+- Managing user sessions and authentication flows
+- Designing and querying relational databases (SQLite)
+- Integrating external APIs into a backend service
+- Handling data validation and edge cases
+- Debugging and improving an existing codebase
+
+---
 
 ## Running the App
 
@@ -38,5 +47,4 @@ Originally I built this project as part of Harvard’s CS50 course and later cam
 python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
-python -m flask run
-```
+flask run
